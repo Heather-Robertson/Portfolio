@@ -95,6 +95,7 @@ function Hero() {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: heroRef.current,
+            start: "top top",
             end: "+=125%",
             pin: true,
             scrub: true,
@@ -106,6 +107,13 @@ function Hero() {
       .to({}, { duration: 0.75});
       // .fromTo(".about", {opacity: 0, y:200}, {opacity: 1, y:0})
       // .fromTo(".action-links", {opacity: 0, y:200}, {opacity: 1, y:0});
+    
+    window.addEventListener("load", ScrollTrigger.refresh);
+
+    return () => {
+      window.removeEventListener("load", ScrollTrigger.refresh);
+    };
+
   }, { scope: heroRef });
 
   return(
@@ -116,7 +124,7 @@ function Hero() {
         <h1 className="name">Heather <br /> Robertson</h1>
         <div className="action-links">
           <a href="HeatherRobertsonResume.pdf" className="resume-button">View My Resume</a>
-          <a href="www.linkedin.com/in/heather-robertson-profile" className="contact-button">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/heather-robertson-profile" className="contact-button">LinkedIn</a>
           <a href="mailto:robertsonheatherp@gmail.com" className="contact-button">Email</a>
           <a href="tel:423-767-4905" className="contact-button">Phone</a>
         </div>
@@ -195,6 +203,12 @@ function HorizontalSection({title, sectionID, content, cards}) {
     .to({}, {
       duration: 0.3
     });
+
+    window.addEventListener("load", ScrollTrigger.refresh);
+
+    return () => {
+      window.removeEventListener("load", ScrollTrigger.refresh);
+    };
   }, { scope: sectionRef });
   
   return(
@@ -262,6 +276,12 @@ function Playground() {
         },
         edgeResistance: 0.9
       })
+
+      window.addEventListener("load", ScrollTrigger.refresh);
+
+      return () => {
+        window.removeEventListener("load", ScrollTrigger.refresh);
+      };
   }, { scope: playgroundRef });
 
   const playgroundImages = [
