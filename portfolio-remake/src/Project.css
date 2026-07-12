@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Agdasima:wght@400;700&family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=Major+Mono+Display&family=Rubik+Broken+Fax&family=Unica+One&display=swap');
+/* Rational Linear: Abel, Agadasima, Albert Sans, Alumni Sans SC, Alumni Sans, Major Mono Display, Rubik Broken Fax, Unica One */
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Buda:wght@300&family=Ojuju:wght@200..800&family=Barrio&family=Savate:ital,wght@0,200..900;1,200..900&display=swap');
+/* Dynamic Contrasting: Arsenal SC, Arsenal, Buda, Ojuju, Barrio, Savate */
+
+:root {
+  --bg: #fbfbf8;
+  --surface: #ffffff;
+  --surface-soft: #f1f5f4;
+  --surface-medium: #dadedd;
+  --surface-strong: #102936;
+  --border: #ccd5d2;
+  --text: #121717;
+  --muted: #4e5a5c;
+  --accent-red: #871f3e;
+  --accent-fuschia: #871f72;
+  --accent-violet: #681f87;
+  --accent-indigo: #341f87;
+  --accent-blue: #1f3e87;
+  --accent-teal: #1f7287;
+  --accent-green: #27685c;
+  --accent-light: #5682EF;
+  --shadow: 0 18px 50px rgba(18, 23, 23, 0.12);
+  --radius: 8px;
+  --max: 1180px;
+}
+
+.project-page .title{
+  justify-self: center;
+  margin: auto auto;
+  padding: clamp(5vh, 7.5vh, 10vh) 1.5vw 5vh;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  background-color: var(--bg);
+  border: none;
+}
+
+.project-page h1{
+  font-family: "Abel";
+  font-weight: 1000;
+  color: var(--accent-blue);
+  font-size: clamp(32px, 40px, 40px);
+}
+
+.project-page p {
+  font-family: "Abel", sans-serif;
+  margin: 0.1vh 0 1vh;
+  color: var(--text);
+  font-size: 20px;
+}
+
+.project-page section {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  margin: 3vh;
+  position: relative;
+  overflow: hidden;
+  width: 75%;
+  justify-self: center;
+}
+
+.project-page section h2 {
+  font-family: "Alumni Sans SC", sans-serif;
+  font-weight: 1500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  font-size: clamp(24px, 30px, 30px);
+}
+
+.project-page .bats h2{
+    color: #6B6650;
+    margin: 0% 5% 0%;
+}
+
+.project-page section h3 {
+  font-family: "Abel", sans-serif;
+  font-weight: 1000;
+  color: var(--accent-blue);
+  font-size: 20px;
+}
+
+embed {
+    width: 100%;
+    height: 80vh;
+}
+
+.project-page .image-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+}
+
+.project-page .image-grid div {
+  padding: 5px;
+  padding-top: 0px;
+  padding-bottom:0px;
+}
+
+.project-page .image-grid img {
+  width: 100%;
+}
