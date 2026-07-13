@@ -288,7 +288,7 @@ header {
 .eyebrow-text span {
   display: flex;
   align-items: center;
-  height: 1.5;
+  line-height: 1.2em;
   white-space: nowrap;
 }
 
