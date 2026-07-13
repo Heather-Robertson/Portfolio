@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx'
 
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
 import { Draggable } from "gsap/Draggable.js";

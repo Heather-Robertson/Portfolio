@@ -24,7 +24,7 @@ import {PandaBugs, BatResources, TossNTow, LipstickFabulator, Diceplay, Thesis, 
 
 import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
 import { Draggable } from "gsap/Draggable.js";
