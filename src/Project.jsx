@@ -46,7 +46,7 @@ import MothitorSheet from "./assets/ResearchFiles/MothitorSheet.jpeg"
 import MothitorSetup from "./assets/ResearchFiles/MothitorSetup.png"
 
 import './Project.css'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 
 
 function Nav() {

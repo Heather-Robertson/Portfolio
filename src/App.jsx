@@ -22,21 +22,15 @@ import ThesisBoxPreview from "./assets/PlaygroundPictures/ThesisBoxPreview.jpeg"
 
 import {PandaBugs, BatResources, TossNTow, LipstickFabulator, Diceplay, Thesis, Mothitor} from './Project.jsx'
 
-import './index.css'
-import { useRef } from "react";
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { Draggable } from "gsap/Draggable";
+import './index.css'
+import { useRef } from "react";
 
-gsap.registerPlugin(
-  ScrollTrigger,
-  MotionPathPlugin,
-  Draggable,
-  useGSAP
-);
 
 function LanguageSelector() {
   return(
@@ -107,13 +101,6 @@ function Hero() {
       .to({}, { duration: 0.75});
       // .fromTo(".about", {opacity: 0, y:200}, {opacity: 1, y:0})
       // .fromTo(".action-links", {opacity: 0, y:200}, {opacity: 1, y:0});
-    
-    window.addEventListener("load", ScrollTrigger.refresh);
-
-    return () => {
-      window.removeEventListener("load", ScrollTrigger.refresh);
-    };
-
   }, { scope: heroRef });
 
   return(
@@ -204,11 +191,11 @@ function HorizontalSection({title, sectionID, content, cards}) {
       duration: 0.3
     });
 
-    window.addEventListener("load", ScrollTrigger.refresh);
+    // window.addEventListener("load", ScrollTrigger.refresh);
 
-    return () => {
-      window.removeEventListener("load", ScrollTrigger.refresh);
-    };
+    // return () => {
+    //   window.removeEventListener("load", ScrollTrigger.refresh);
+    // };
   }, { scope: sectionRef });
   
   return(
@@ -244,6 +231,8 @@ function Playground() {
   const playgroundRef = useRef();
   const ballRef = useRef();
   const pathRef = useRef();
+  const canvasRef = useRef();
+  const innerRef = useRef();
 
   useGSAP(() => {
     gsap.to(ballRef.current, {
@@ -277,11 +266,11 @@ function Playground() {
         edgeResistance: 0.9
       })
 
-      window.addEventListener("load", ScrollTrigger.refresh);
+      // window.addEventListener("load", ScrollTrigger.refresh);
 
-      return () => {
-        window.removeEventListener("load", ScrollTrigger.refresh);
-      };
+      // return () => {
+      //   window.removeEventListener("load", ScrollTrigger.refresh);
+      // };
   }, { scope: playgroundRef });
 
   const playgroundImages = [
@@ -300,10 +289,6 @@ function Playground() {
     {source: Knitting2Preview, alt: "A large purple scarf in the midst of being knit", x: 100, y: 60}
     // {source: , alt: , x: , y: },
   ];
-
-  const canvasRef = useRef();
-  const innerRef = useRef();
-
 
   return (
     <section className="playground-wrapper" id="playground" ref={playgroundRef}>
@@ -384,7 +369,7 @@ function Home() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/PandaBugs" element={<PandaBugs />} />
@@ -395,7 +380,7 @@ function App() {
         <Route path="/Thesis" element={<Thesis />} />
         <Route path="/Mothitor" element={<Mothitor />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
