@@ -5,9 +5,11 @@ import App from './App.jsx'
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import { Draggable } from "gsap/Draggable";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
+import { Draggable } from "gsap/Draggable.js";
+
+console.log(ScrollTrigger);
 
 gsap.registerPlugin(
   ScrollTrigger,
