@@ -352,7 +352,7 @@ function Home() {
   ];
 
   if (isMobile) {
-      return <div className="mobile-warning"><h1>This content is available only on mobile</h1></div>
+      return <div className="mobile-warning"><h1>This content is available only on larger screens. Please switch to desktop or expand your window.</h1></div>
     }
 
   return(
