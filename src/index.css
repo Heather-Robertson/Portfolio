@@ -73,6 +73,16 @@ img {
   height: auto;
 }
 
+.mobile-warning{
+  width: 100%;
+  background-color: var(--bg);
+}
+
+.mobile-warning a{
+  font-size: 42px;
+  color: var(--surface-strong);
+}
+
 
 /* ---- HEADER ---- */
 

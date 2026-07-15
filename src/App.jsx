@@ -23,6 +23,7 @@ import ThesisBoxPreview from "./assets/PlaygroundPictures/ThesisBoxPreview.jpeg"
 import {PandaBugs, BatResources, TossNTow, LipstickFabulator, Diceplay, Thesis, Mothitor} from './Project.jsx'
 
 import { HashRouter, Routes, Route, Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
@@ -30,6 +31,7 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
 import { Draggable } from "gsap/Draggable.js";
 import './index.css'
 import { useRef } from "react";
+import { MobileView, isMobile } from 'react-device-detect';
 
 
 function LanguageSelector() {
@@ -52,10 +54,10 @@ function Nav() {
   <nav className="nav">
     <Link className="brand-link" to="/">Heather Robertson</Link>
     <ul className="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#making">Making</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#playground">Playground</a></li>
+      <li><HashLink smooth to="/#home">Home</HashLink></li>
+      <li><HashLink smooth to="/#making">Making</HashLink></li>
+      <li><HashLink smooth to="/#research">Research</HashLink></li>
+      <li><HashLink smooth to="/#playground">Playground</HashLink></li>
       {/* <LanguageSelector /> */}
     </ul>
   </nav>
@@ -348,6 +350,10 @@ function Home() {
     {ref: "/Thesis", title: "Undergraduate Honors Thesis", subtitle: ['"Tilability of Platonic Solid Nets in Multiple Dimensions"',<br />, "Smith College Computer Science 2025",<br />,"Awarded Highest Honors"], image: ThesisPreview, alt: "A tiling pattern dervied from pentagons", skills:[{title: "Computational Geometry"}, {title: "Mathematica"}, {title: "Python"}, {title: "TeX"}] },
     {ref: "/Mothitor", title: "Mothitor", subtitle: "A set of computational tools for remote moth monitoring", image: MothitorPreview, alt: "A group of researchers hiking to a fieldwork site", skills:[{title: "Sustainable Design"}, {title: "Raspberry Pi"}, {title: "Physical Computing"}, {title:"Computer Vision"}, {title: "Prototyping"}, {title: "Fieldwork and Field Testing"}]  },
   ];
+
+  if (isMobile) {
+      return <div className="mobile-warning"><h1>This content is available only on mobile</h1></div>
+    }
 
   return(
     <>

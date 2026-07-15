@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
 import { Draggable } from "gsap/Draggable.js";
 
-console.log(ScrollTrigger);
+import { MobileView, isMobile } from 'react-device-detect';
 
 gsap.registerPlugin(
   ScrollTrigger,
@@ -17,9 +17,6 @@ gsap.registerPlugin(
   Draggable,
   useGSAP
 );
-
-console.log("GSAP:", gsap.version);
-console.log("Registered:", gsap.core.globals().ScrollTrigger);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
